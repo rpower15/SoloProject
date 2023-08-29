@@ -31,6 +31,7 @@ const Schema = mongoose.Schema;
 // sets a schema for the projects collection
 const projectsSchema = new Schema({
   name: String,
+  id: Number,
   student_id: {
     // type of ObjectId makes this behave like a foreign key referencing the user collection
     type: Schema.Types.ObjectId,
@@ -43,7 +44,8 @@ const Project = mongoose.model('projects', projectsSchema);
 
 // create a schema for students and use it to create the model for it below
 const studentsSchema = new Schema({
-  name: String,
+  firstName: String,
+  lastName: String,
   id: Number,
 });
 
