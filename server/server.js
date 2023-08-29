@@ -9,14 +9,14 @@
  * ************************************
  */
 
-const path = require('path');
 const express = require('express');
-
 const app = express();
+const path = require('path');
 
 const apiRouter = require('./routes/api');
 
-const PORT = 8080;
+const PORT = 3000;
+console.log('NODE_ENV: ', process.env.NODE_ENV);
 
 /**
  * handle parsing request body
@@ -32,7 +32,15 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 /**
  * define route handlers
  */
-app.use('/api', apiRouter);
+
+if (process.env.NODE_ENV === 'production') {
+  // statically serve everything in the build folder on the route '/build'
+  app.use('/build', express.static(path.join(__dirname, '../build')));
+  // serve index.html on the route '/'
+  app.get('/', (req, res) => {
+    return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+  });
+}
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) =>
@@ -58,6 +66,7 @@ app.use((err, req, res, next) => {
 /**
  * start server
  */
+// listens on port 3000 --> http://localhost:3000/
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);
 });
