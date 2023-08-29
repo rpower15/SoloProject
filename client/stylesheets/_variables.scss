@@ -1,0 +1,6 @@
+$primary-color: rgb(0, 0, 0);
+$secondary-color: lighten($primary-color, 30%);
+$light-color: lighten($primary-color, 70%);
+$super-light-color: lighten($primary-color, 95%);
+$button-color: #0d738d;
+$button-light-color: lighten($button-color, 50%);
