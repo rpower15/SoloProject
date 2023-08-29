@@ -10,7 +10,7 @@
  */
 
 import React from 'react';
-import Market from './Market.jsx';
+import Market from './Project.jsx';
 import { useSelector } from 'react-redux';
 
 const ProjectsDisplay = props => {};

@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 
 const MONGO_URI =
   // URI from ElephantSQL
-  '<URL>';
+  'mongodb+srv://verunga15:Jz8L58jFll9Vt2IV@cluster0.iznjjbn.mongodb.net/';
 
 mongoose
   .connect(MONGO_URI, {
