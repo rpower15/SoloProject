@@ -31,8 +31,16 @@ const Schema = mongoose.Schema;
 // sets a schema for the projects collection
 const projectsSchema = new Schema({
   name: String,
-
-  id: Number,
+  dateCreated: { type: Date, default: Date.now },
+  problem: String,
+  ask: String,
+  imagine: String,
+  plan: String,
+  create: String,
+  test: String,
+  improve: String,
+  share: String,
+  debrief: String,
   student_id: {
     // type of ObjectId makes this behave like a foreign key referencing the user collection
     type: Schema.Types.ObjectId,
@@ -47,7 +55,6 @@ const Project = mongoose.model('projects', projectsSchema);
 const studentsSchema = new Schema({
   firstName: String,
   lastName: String,
-  id: Number,
 });
 
 // creats a model for the users collection that will be part of the export

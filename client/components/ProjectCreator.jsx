@@ -10,10 +10,17 @@
  */
 
 import React from 'react';
-import { addProjctActionCreator } from '../actions/actions';
-import { useSelector } from 'react-redux';
-import store from '../store';
 
-const ProjectCreator = props => {};
+const ProjectCreator = props => {
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noreferrer');
+  };
+
+  return (
+    <button role='newProject' onClick={() => openInNewTab('/project')}>
+      Create New Project
+    </button>
+  );
+};
 
 export default ProjectCreator;

@@ -13,7 +13,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-const apiRouter = require('./routes/api');
+// const apiRouter = require('./routes/api');
+const projectController = require('./controllers/projectController');
 
 const PORT = 3000;
 console.log('NODE_ENV: ', process.env.NODE_ENV);
@@ -37,10 +38,19 @@ if (process.env.NODE_ENV === 'production') {
   // statically serve everything in the build folder on the route '/build'
   app.use('/build', express.static(path.join(__dirname, '../build')));
   // serve index.html on the route '/'
-  app.get('/', (req, res) => {
+  app.get('/', projectController.getProjects, (req, res) => {
+    console.log(res.locals.projects);
     return res.status(200).sendFile(path.join(__dirname, '../index.html'));
   });
 }
+
+app.get('/project', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../project.html'));
+});
+
+app.post('/', projectController.createProject, (req, res) => {
+  return res.locals.project;
+});
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) =>

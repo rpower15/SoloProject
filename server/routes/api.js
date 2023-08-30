@@ -16,7 +16,7 @@ const projectController = require('../controllers/projectController');
 const router = express.Router();
 
 router.get('/', projectController.getProjects, (req, res) =>
-  res.status(200).json('something'),
+  res.status(200).json(res.locals.projects),
 );
 
 module.exports = router;

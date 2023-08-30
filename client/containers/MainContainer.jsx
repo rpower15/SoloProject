@@ -12,9 +12,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 // import from child components...
-import ProjectsDisplay from '../components/ProjectsDisplay.jsx';
+import ProjectCreator from '../components/ProjectCreator';
 import ProjectsContainer from './ProjectsContainer.jsx';
 
-const MainContainer = () => {};
+const MainContainer = () => {
+  return (
+    <div className='container'>
+      <div className='outerBox'>
+        <h1 id='header'>Engineering Design Notebook</h1>
+        <ProjectCreator />
+        <ProjectsContainer />
+      </div>
+    </div>
+  );
+};
 
 export default MainContainer;
