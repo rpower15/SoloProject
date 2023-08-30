@@ -10,7 +10,33 @@
  */
 
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ADD_CARD } from '../reducers/projectsReducer';
+import store from '../store';
 
-const ProjectsCreator = props => {};
+const ProjectsCreator = props => {
+  const addProject = () => {
+    const name = document.getElementById('name').value;
+    props.dispatch(ADD_CARD(name));
+  };
+  const handleKeyPress = e => {
+    if (e.key === 'Enter') {
+      addProject();
+    }
+  };
+  return (
+    <div>
+      <h2 id='new-project'>Add new project</h2>
+      <label htmlFor='name'>Name of Project: </label>
+      <input
+        type='text'
+        id='name'
+        onKeyDown={key => handleKeyPress(key)}></input>
+      <button type='button' onClick={() => addProject()}>
+        Save Project
+      </button>
+    </div>
+  );
+};
 
 export default ProjectsCreator;

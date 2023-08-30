@@ -11,11 +11,7 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  ADD_CARD,
-  DELETE_CARD,
-  UPDATE_CARD,
-} from '../reducers/projectsReducer';
+import { DELETE_CARD, UPDATE_CARD } from '../reducers/projectsReducer';
 
 const Project = props => {
   const projects = useSelector(state => state.projects);

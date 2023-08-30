@@ -10,9 +10,27 @@
  */
 
 import React from 'react';
-import Market from './Project.jsx';
+import Project from './Project.jsx';
 import { useSelector } from 'react-redux';
 
-const ProjectsDisplay = props => {};
+const ProjectsDisplay = props => {
+  const projects = useSelector(state => state.projects);
+  const displayProjects = [];
+
+  // for (let i = 0; i < projects.projectsList.length; i++) {
+  //   displayProjects.push(<Project key={projects.projectList[i].id} />);
+
+  //   {
+  //     displayProjects;
+  //   }
+  // }
+
+  return (
+    <div className='displayBox'>
+      <h4>Projects</h4>
+      {displayProjects}
+    </div>
+  );
+};
 
 export default ProjectsDisplay;
