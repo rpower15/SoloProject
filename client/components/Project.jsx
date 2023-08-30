@@ -14,8 +14,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   addCardActionCreator,
   deleteCardActionCreator,
+  updateCardActionCreator,
 } from '../actions/actions';
 
-const Project = props => {};
+const Project = props => {
+  const projects = useSelector(state => state.projects);
+  const dispatch = useDispatch();
+};
 
 export default Project;

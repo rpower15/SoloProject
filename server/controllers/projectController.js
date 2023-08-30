@@ -12,7 +12,7 @@
 const { Project, Student } = require('../models/projectModels');
 const projectController = {};
 
-projectController.getStudent = (req, res, next) => {
+projectController.getProjects = (req, res, next) => {
   return next();
 };
 

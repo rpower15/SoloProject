@@ -12,7 +12,7 @@
 const mongoose = require('mongoose');
 
 const MONGO_URI =
-  // URI from ElephantSQL
+  // URI from MongoDB
   'mongodb+srv://verunga15:Jz8L58jFll9Vt2IV@cluster0.iznjjbn.mongodb.net/';
 
 mongoose
@@ -31,6 +31,7 @@ const Schema = mongoose.Schema;
 // sets a schema for the projects collection
 const projectsSchema = new Schema({
   name: String,
+
   id: Number,
   student_id: {
     // type of ObjectId makes this behave like a foreign key referencing the user collection

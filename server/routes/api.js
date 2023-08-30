@@ -15,7 +15,7 @@ const projectController = require('../controllers/projectController');
 
 const router = express.Router();
 
-router.get('/', projectController.getStudent, (req, res) =>
+router.get('/', projectController.getProjects, (req, res) =>
   res.status(200).json('something'),
 );
 

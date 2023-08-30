@@ -21,3 +21,8 @@ export const deleteCardActionCreator = projectId => ({
   type: types.DELETE_CARD,
   payload: projectId,
 });
+
+export const updateCardActionCreator = projectId => ({
+  type: types.UPDATE_CARD,
+  payload: projectId,
+});

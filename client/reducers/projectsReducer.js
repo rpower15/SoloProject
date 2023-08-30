@@ -20,6 +20,8 @@ const projectsReducer = (state = initialState, action) => {
     }
     case types.DELETE_CARD: {
     }
+    case types.UPDATE_CARD: {
+    }
     default: {
       return state;
     }
