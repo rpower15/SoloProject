@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * handle requests for static files
  */
-app.use(express.static(path.resolve(__dirname, '../client')));
+app.use('/assets', express.static(path.join(__dirname, './assets')));
 
 /**
  * define route handlers

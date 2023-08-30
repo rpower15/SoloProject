@@ -1,17 +1,17 @@
 /**
  * ************************************
  *
- * @module  ProjectCreator
+ * @module  NewProjectCreator
  * @author  Rachel Power
  * @date    8-29-23
- * @description presentation component that takes user input for new project creation
+ * @description presentation component that renders a button to create a new project
  *
  * ************************************
  */
 
 import React from 'react';
 
-const ProjectCreator = props => {
+const NewProjectCreator = props => {
   const openInNewTab = url => {
     window.open(url, '_blank', 'noreferrer');
   };
@@ -23,4 +23,4 @@ const ProjectCreator = props => {
   );
 };
 
-export default ProjectCreator;
+export default NewProjectCreator;
