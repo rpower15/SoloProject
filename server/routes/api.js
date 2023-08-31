@@ -16,9 +16,12 @@ const { path } = require('../server');
 
 const router = express.Router();
 
-router.get('/', projectController.getProjects, (req, res) => {
-  console.log(res.locals.projects);
+router.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+});
+
+router.get('/projectCard', projectController.getProjects, (req, res) => {
+  return res.status(200).send(res.locals.projects);
 });
 
 module.exports = router;

@@ -48,6 +48,10 @@ app.get('/project', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../project.html'));
 });
 
+app.get('/projectCard', apiRouter, (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../project.html'));
+});
+
 // app.post('/', projectController.createProject, (req, res) => {
 //   return res.locals.project;
 // });

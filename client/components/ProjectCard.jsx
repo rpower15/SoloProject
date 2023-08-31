@@ -13,8 +13,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DELETE_CARD, UPDATE_CARD } from '../reducers/projectsReducer';
 
-const ProjectCard = projectInfo => {
-  const { name, dateCreated, description, image } = projectInfo;
+const ProjectCard = props => {
+  const { name, dateCreated, description, image } = props.data;
 
   const dispatch = useDispatch();
   const deleteCard = () => {
@@ -26,21 +26,29 @@ const ProjectCard = projectInfo => {
 
   return (
     <div className='projectBox'>
-      <img src={image} />
+      <img width='80%' src={image} />
       <p>
         <strong>Project Name: </strong>
+        <br></br>
         {name}
       </p>
+      <br></br>
       <p>
         <strong>Date Created: </strong>
+        <br></br>
         {dateCreated}
       </p>
+      <br></br>
       <p>
         <strong>Description: </strong>
+        <br></br>
         {description}
       </p>
-      <button onClick={() => updateCard()}>Update Card</button>
-      <button onClick={() => deleteCard()}>Delete Card</button>
+      <br></br>
+      <div className='projectbtn'>
+        <button onClick={() => updateCard()}>Update Card</button>
+        <button onClick={() => deleteCard()}>Delete Card</button>
+      </div>
     </div>
   );
 };
