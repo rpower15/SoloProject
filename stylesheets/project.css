@@ -1,0 +1,10 @@
+#content textarea {
+  height: 50px;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+#paintserver iframe {
+  height: 100vh;
+  width: 50%;
+}

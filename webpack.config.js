@@ -53,6 +53,7 @@ module.exports = {
     },
     proxy: {
       '/': 'http://localhost:3000/',
+      '/project': 'http://localhost:3000/project',
     },
   },
 };

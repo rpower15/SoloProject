@@ -13,24 +13,31 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DELETE_CARD, UPDATE_CARD } from '../reducers/projectsReducer';
 
-const Project = props => {
-  const projects = useSelector(state => state.projects);
+const ProjectCard = projectInfo => {
+  const { name, dateCreated, description, image } = projectInfo;
+
   const dispatch = useDispatch();
   const deleteCard = () => {
-    return dispatch(DELETE_CARD(props.id));
+    return dispatch(DELETE_CARD(projectInfo._id));
   };
   const updateCard = () => {
-    return dispatch(UPDATE_CARD(props.id));
+    return dispatch(UPDATE_CARD(projectInfo._id));
   };
+
   return (
     <div className='projectBox'>
+      <img src={image} />
       <p>
         <strong>Project Name: </strong>
-        {/* {`${projects.projectList[props.index].projectId}`} */}
+        {name}
+      </p>
+      <p>
+        <strong>Date Created: </strong>
+        {dateCreated}
       </p>
       <p>
         <strong>Description: </strong>
-        {/* {`${projects.projectList[props.index].projectId}`} */}
+        {description}
       </p>
       <button onClick={() => updateCard()}>Update Card</button>
       <button onClick={() => deleteCard()}>Delete Card</button>
@@ -38,4 +45,4 @@ const Project = props => {
   );
 };
 
-export default Project;
+export default ProjectCard;

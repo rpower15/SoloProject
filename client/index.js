@@ -14,7 +14,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import Home from './pages/Home.jsx';
 import store from './store';
-// import '../stylesheets/stylesheets';
+// import '../stylesheets/styles';
 
 import ReacDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

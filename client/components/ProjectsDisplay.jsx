@@ -10,7 +10,7 @@
  */
 
 import React from 'react';
-import Project from './ProjectCard.jsx';
+import ProjectCard from './ProjectCard.jsx';
 import { useSelector } from 'react-redux';
 
 const ProjectsDisplay = props => {

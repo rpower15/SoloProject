@@ -32,6 +32,7 @@ const Schema = mongoose.Schema;
 const projectsSchema = new Schema({
   name: String,
   dateCreated: { type: Date, default: Date.now },
+  image: String,
   problem: String,
   ask: String,
   imagine: String,

@@ -13,17 +13,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 //this state governs the state of the entire app
 const initialState = {
-  name: '',
-  dateCreated: '',
-  problem: '',
-  ask: '',
-  imagine: '',
-  plan: '',
-  create: '',
-  test: '',
-  improve: '',
-  share: '',
-  debrief: '',
+  projects: [],
+  error: null,
+  loading: false,
 };
 
 export const projectSlice = createSlice({

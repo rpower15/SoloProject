@@ -13,7 +13,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-// const apiRouter = require('./routes/api');
+const apiRouter = require('./routes/api');
 const projectController = require('./controllers/projectController');
 
 const PORT = 3000;
@@ -28,7 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * handle requests for static files
  */
-app.use('/assets', express.static(path.join(__dirname, './assets')));
+app.use('/assets', express.static(path.join(__dirname, '../assets')));
+app.use('/stylesheets', express.static(path.join(__dirname, '../stylesheets')));
 
 /**
  * define route handlers
@@ -37,25 +38,18 @@ app.use('/assets', express.static(path.join(__dirname, './assets')));
 if (process.env.NODE_ENV === 'production') {
   // statically serve everything in the build folder on the route '/build'
   app.use('/build', express.static(path.join(__dirname, '../build')));
-  app.use('/assets', express.static(path.join(__dirname, '../assets')));
-  app.use(
-    '/stylesheets',
-    express.static(path.join(__dirname, '../stylesheets')),
-  );
+
   // serve index.html on the route '/'
-  app.get('/', projectController.getProjects, (req, res) => {
-    console.log(res.locals.projects);
-    return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-  });
+  app.get('/', apiRouter);
 }
 
 app.get('/project', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../project.html'));
 });
 
-app.post('/', projectController.createProject, (req, res) => {
-  return res.locals.project;
-});
+// app.post('/', projectController.createProject, (req, res) => {
+//   return res.locals.project;
+// });
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) =>
