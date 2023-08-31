@@ -9,12 +9,19 @@
  * ************************************
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DELETE_CARD, UPDATE_CARD } from '../reducers/projectsReducer';
 
 const ProjectCard = props => {
   const { name, dateCreated, description, image } = props.data;
+  const [projectCard, updateProjectCar] = useState([]);
+
+  useEffect(() => {
+    fetch('/projectCard:_id', { method: 'DELETE' })
+      .then(res => res.json())
+      .catch(error => console.log('Error', error));
+  }, []);
 
   const dispatch = useDispatch();
   const deleteCard = () => {
