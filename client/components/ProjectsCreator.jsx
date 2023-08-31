@@ -26,15 +26,14 @@ const ProjectsCreator = props => {
   };
   return (
     <div>
-      <h2 id='new-project'>Add new project</h2>
-      <label htmlFor='name'>Name of Project: </label>
+      {/* <label htmlFor='name'>Name of Project: </label>
       <input
         type='text'
         id='name'
         onKeyDown={key => handleKeyPress(key)}></input>
       <button type='button' onClick={() => addProject()}>
         Save Project
-      </button>
+      </button> */}
     </div>
   );
 };

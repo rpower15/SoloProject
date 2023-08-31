@@ -37,6 +37,11 @@ app.use('/assets', express.static(path.join(__dirname, './assets')));
 if (process.env.NODE_ENV === 'production') {
   // statically serve everything in the build folder on the route '/build'
   app.use('/build', express.static(path.join(__dirname, '../build')));
+  app.use('/assets', express.static(path.join(__dirname, '../assets')));
+  app.use(
+    '/stylesheets',
+    express.static(path.join(__dirname, '../stylesheets')),
+  );
   // serve index.html on the route '/'
   app.get('/', projectController.getProjects, (req, res) => {
     console.log(res.locals.projects);

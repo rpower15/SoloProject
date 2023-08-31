@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './client/index.js',
@@ -36,15 +36,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].scss',
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: '[name].[contenthash].css',
+    // }),
   ],
   devServer: {
     host: 'localhost',
     port: 8080,
     compress: true,
+    open: true,
     hot: true,
+    historyApiFallback: true,
     static: {
       directory: path.resolve(__dirname, 'build'),
       publicPath: '/build',

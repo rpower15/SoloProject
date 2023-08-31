@@ -41,11 +41,11 @@ const projectsSchema = new Schema({
   improve: String,
   share: String,
   debrief: String,
-  student_id: {
-    // type of ObjectId makes this behave like a foreign key referencing the user collection
-    type: Schema.Types.ObjectId,
-    ref: 'students',
-  },
+  // student_id: {
+  //   // type of ObjectId makes this behave like a foreign key referencing the user collection
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'students',
+  // },
 });
 
 // create a model for the project collection that will be part of the export

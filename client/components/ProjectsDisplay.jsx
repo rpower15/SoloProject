@@ -17,6 +17,8 @@ const ProjectsDisplay = props => {
   const projects = useSelector(state => state.projects);
   const displayProjects = [];
 
+  //fetch database objects
+
   // for (let i = 0; i < projects.projectsList.length; i++) {
   //   displayProjects.push(<Project key={projects.projectList[i].id} />);
 
@@ -27,7 +29,7 @@ const ProjectsDisplay = props => {
 
   return (
     <div className='displayBox'>
-      <h4>Projects</h4>
+      <h2>Projects</h2>
       {displayProjects}
     </div>
   );
