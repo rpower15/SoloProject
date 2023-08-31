@@ -10,9 +10,9 @@
  */
 
 import React from 'react';
-import MainContainer from './containers/MainContainer.jsx';
+import MainContainer from '../containers/MainContainer.jsx';
 
-const App = () => {
+const Home = () => {
   return (
     <div>
       <MainContainer />
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
