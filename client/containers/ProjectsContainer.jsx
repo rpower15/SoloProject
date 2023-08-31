@@ -17,12 +17,7 @@ import ProjectsDisplay from '../components/ProjectsDisplay.jsx';
 
 const ProjectsContainer = () => {
   const dispatch = useDispatch();
-  return (
-    <div className='innerbox'>
-      {<ProjectsCreator />}
-      {<ProjectsDisplay />}
-    </div>
-  );
+  return <div className='innerbox'>{<ProjectsDisplay />}</div>;
 };
 
 export default ProjectsContainer;

@@ -18,15 +18,17 @@ const ProjectCard = props => {
 
   const dispatch = useDispatch();
   const deleteCard = () => {
-    return dispatch(DELETE_CARD(projectInfo._id));
+    return dispatch(DELETE_CARD(props._id));
   };
   const updateCard = () => {
-    return dispatch(UPDATE_CARD(projectInfo._id));
+    return dispatch(UPDATE_CARD(props._id));
   };
 
   return (
     <div className='projectBox'>
-      <img width='80%' src={image} />
+      <div className='thumbnail'>
+        <img height='125px' src={image} />
+      </div>
       <p>
         <strong>Project Name: </strong>
         <br></br>
@@ -46,8 +48,10 @@ const ProjectCard = props => {
       </p>
       <br></br>
       <div className='projectbtn'>
-        <button onClick={() => updateCard()}>Update Card</button>
-        <button onClick={() => deleteCard()}>Delete Card</button>
+        <button id='updatebtn' onClick={() => updateCard()}>
+          Edit Project
+        </button>
+        <button onClick={() => deleteCard()}>Delete Project</button>
       </div>
     </div>
   );
