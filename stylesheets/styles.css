@@ -24,11 +24,18 @@ body {
   width: 95%;
   margin: 15px auto;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: aliceblue;
 }
 
 .displayBox {
   overflow: auto;
   padding-top: 10px;
+  background-color: aliceblue;
+}
+
+.displayBox h2 {
+  padding-left: 10px;
+  background-color: aliceblue;
 }
 
 .projectBox {
@@ -44,7 +51,7 @@ body {
   color: rgb(20, 13, 141);
 }
 
-.thumbnail {
+.projectBox img {
   display: flex;
   flex-direction: row;
   justify-content: center;
