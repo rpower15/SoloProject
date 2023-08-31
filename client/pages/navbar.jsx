@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
+import Project from './Project';
 
 function Navbar() {
   return (
     <nav>
       <ul>
-        <li>
-          <Link to='/'>Home</Link>
+        <li id='nav-bar'>
+          <Link to='/'>Return to Notebook</Link>
+          <Link to='/project'></Link>
         </li>
       </ul>
     </nav>

@@ -13,6 +13,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import store from '../store';
 import { projectSlice } from '../reducers/projectsReducer';
+import { Link } from 'react-router-dom';
 
 const NewProjectCreator = props => {
   const openInNewTab = url => {
@@ -20,21 +21,19 @@ const NewProjectCreator = props => {
     document.getElementById('name').value = '';
     window.open(url, '_blank', 'noreferrer');
   };
-  const handleKeyPress = e => {
-    if (e.key === 'Enter') {
-      openInNewTab('/project');
-    }
-  };
+  // const handleKeyPress = e => {
+  //   if (e.key === 'Enter') {
+  //     openInNewTab('/project');
+  //   }
+  // };
   return (
-    <div>
+    <div id='new-project'>
       <label htmlFor='name'>Name of New Project: </label>
-      <input
-        type='text'
-        id='name'
-        onKeyDown={key => handleKeyPress(key)}></input>
-      <button role='newProject' onClick={() => openInNewTab('/project')}>
-        Create New Project
-      </button>
+      <input type='text' id='name'></input>
+      <Link to='/project'>
+        {/* <button role='newProject' onClick={() => openInNewTab('/project')}> */}
+        <button role='newProject'>Create New Project</button>
+      </Link>
     </div>
   );
 };

@@ -16,7 +16,7 @@ import Home from './pages/Home.jsx';
 import store from './store';
 // import '../stylesheets/styles';
 
-import ReacDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './pages/Layout';
 import Project from './pages/Project';
@@ -27,7 +27,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Layout />} />
         <Route index element={<Home />} />
-        <Route path='project' element={<Project />} />
+        <Route path='/project' element={<Project />} />
       </Routes>
     </BrowserRouter>
   );

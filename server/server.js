@@ -38,6 +38,7 @@ app.use('/stylesheets', express.static(path.join(__dirname, '../stylesheets')));
 if (process.env.NODE_ENV === 'production') {
   // statically serve everything in the build folder on the route '/build'
   app.use('/build', express.static(path.join(__dirname, '../build')));
+  app.use('/client', express.static(path.join(__dirname, '../client')));
 
   // serve index.html on the route '/'
   app.get('/', apiRouter);

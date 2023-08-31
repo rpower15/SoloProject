@@ -19,7 +19,7 @@ const MainContainer = () => {
   return (
     <div className='container'>
       <div className='outerBox'>
-        <h1 id='header'>Engineering Design Notebook</h1>
+        <h1 className='header'>Engineering Design Notebook</h1>
         <NewProjectCreator />
         <ProjectsContainer />
       </div>

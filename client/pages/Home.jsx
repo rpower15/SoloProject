@@ -11,6 +11,7 @@
 
 import React from 'react';
 import MainContainer from '../containers/MainContainer.jsx';
+import Navbar from './navbar.jsx';
 
 const Home = () => {
   return (
